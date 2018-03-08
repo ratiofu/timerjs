@@ -26,8 +26,6 @@ jobs:
             - node_modules
       - run: yarn test
       - run: yarn build
-      - run: npm install dot-json
-      - run: $(yarn bin)/dot-json package.json version ${CIRCLE_TAG:1}
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run: npm publish --access=public
 
